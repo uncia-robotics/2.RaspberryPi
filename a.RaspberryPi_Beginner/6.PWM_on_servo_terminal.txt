@@ -1,0 +1,12 @@
+#servo need 50-Hz signal
+#Period=1/freq
+#for 50Hz signal Period=1/freq=1/50=0.2sec=20 milliseconds
+#
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(11,GPIO.OUT)
+x=GPIO.PWM(11,50)
+x.start(5)
+x.ChangeDutyCycle(2)
+x.ChangeDutyCycle(13)
+x.stop()
